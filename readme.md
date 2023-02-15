@@ -14,14 +14,14 @@
 - @param object data
 - @param object options
 
-`js
+```javascript
 import Taro from '@tarojs/taro';
 Taro.getApp().request(url, method = 'GET', data = {})
-`
+```
 
 ### 获取路由参数 
-`js 
+```javascript 
 import { useRouter } from "@tarojs/taro";
 const router = useRouter()
-`
+```
 
