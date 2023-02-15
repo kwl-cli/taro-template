@@ -6,6 +6,7 @@ import Taro from '@tarojs/taro'
 import './index.scss'
 
 const Index = () => {
+  console.log(Taro.getApp())
   const toUrl = () => {
     Taro.navigateTo({url: '/pages/detail/index?id=1'})
   }

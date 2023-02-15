@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import './app.scss' 
 import { ConfigProvider } from '@nutui/nutui-react-taro';
+import request from './service/index'
+import Taro from '@tarojs/taro';
 
 const darkTheme = {
   nutuiBrandColor: 'green',
@@ -8,9 +10,13 @@ const darkTheme = {
   nutuiBrandColorEnd: 'green',
 }
 class App extends Component {
-  componentDidMount () {}
+  componentDidMount() {
+  }
 
-  componentDidShow () {}
+  componentDidShow() {
+    const app = Taro.getApp()
+    app.request = request
+  }
 
   componentDidHide () {}
 

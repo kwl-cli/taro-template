@@ -8,8 +8,16 @@
 
 #### UI组件库 [nutui] https://nutui.jd.com/taro/react/1x/#/zh-CN/component/configprovider
 
-### 请求 Taro.request()
+### 请求 
+- @param string url
+- @param string method GET | POST | PUT | DELETE | FORM
+- @param object data
+- @param object options
 
+`js
+import Taro from '@tarojs/taro';
+Taro.getApp().request(url, method = 'GET', data = {})
+`
 
 ### 获取路由参数 
 `js 

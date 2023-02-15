@@ -16,6 +16,12 @@ const interceptor = function (chain) {
 };
 Taro.addInterceptor(interceptor);
 
+/** 
+ * @param string url
+ * @param string method GET | POST | PUT | DELETE | FORM
+ * @param object data
+ * @param object options
+ */
 const request = (
   url,
   method = "GET",
