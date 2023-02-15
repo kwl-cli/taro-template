@@ -1,36 +1,16 @@
-import { Component } from "react";
+import { View } from "@tarojs/components";
 import {
   Button,
-  Cell,
 } from "@nutui/nutui-react-taro";
+import Taro from '@tarojs/taro'
 import './index.scss'
 
-class Index extends Component<PropsWithChildren> {
-   constructor(props: any) {
-     super(props);
-   }
-
-   componentDidMount() {}
-
-   componentWillUnmount() {}
-
-   componentDidShow() {}
-
-   componentDidHide() {}
-
-   render() {
-     return (
-       <div className="nutui-react-demo">
-         <div className="index">
-          欢迎使用 NutUI React 开发 Taro 多端项目。
-         </div>
-         <div className="index">
-           <Button type="primary" className="btn">
-             NutUI React Button
-           </Button>
-         </div>
-       </div>
-     );
-   }
+const Index = () => {
+  const toUrl = () => {
+    Taro.navigateTo({url: '/pages/detail/index?id=1'})
+  }
+  return <View>
+    <Button type="primary" onClick={toUrl}>qwe</Button>
+  </View>
 }
 export default Index
