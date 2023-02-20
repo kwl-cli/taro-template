@@ -11,6 +11,12 @@ type FormInput = {
 
 } & FormItem
 
+type OptionsType = { text: string, value: string  }
+type FormPickerType = {
+    options: OptionsType[],
+    value: OptionsType
+} & FormItem
+
 export {
-    FormItem, FormInput
+    FormItem, FormInput, FormPickerType
 }

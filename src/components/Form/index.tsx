@@ -1,10 +1,10 @@
+import { cloneElement, Children, useState, forwardRef, useImperativeHandle } from 'react'
 import { View } from '@tarojs/components'
-import React, { cloneElement, useEffect, Children, useState, forwardRef, useImperativeHandle } from 'react'
-import { CellGroup, Cell } from '@nutui/nutui-react-taro';
-
-import { FormInputItem } from './FormItem'
+import { CellGroup } from '@nutui/nutui-react-taro';
+import { FormInputItem, FormPickerItem } from './FormItem'
 
 export const FormInput = (props) => <FormInputItem {...props}></FormInputItem>
+export const FormPicker = (props) => <FormPickerItem {...props}></FormPickerItem>
 
 const FormIndex = (props, formRef) => {
     const validate: string[] = []
@@ -12,6 +12,7 @@ const FormIndex = (props, formRef) => {
 
     useImperativeHandle(formRef, () => ({
         getValues,
+        setValues,
         submit
     }))
 
@@ -20,6 +21,10 @@ const FormIndex = (props, formRef) => {
 
     const onValueChange = (value) => {
         setFormData(v => ({ ...v, ...value }))
+    }
+
+    const setValues = (v: { [key: string]: string }) => {
+        setFormData(v)
     }
 
     const getValues = (v?: string[]) => {
@@ -40,9 +45,7 @@ const FormIndex = (props, formRef) => {
                 arr.push(item)
             }
         })
-
         setErrorValidate(arr)
-
         if (!!arr.length) return
         if (onFinish) onFinish(formData)
     }
@@ -66,4 +69,5 @@ const FormIndex = (props, formRef) => {
 }
 
 const Form = forwardRef(FormIndex)
+
 export default Form
