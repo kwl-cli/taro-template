@@ -12,6 +12,7 @@ const Index = () => {
   }
   return <View>
     <Button type="primary" onClick={toUrl}>qwe</Button>
+    <Button type="primary" onClick={() => Taro.navigateTo({url: '/pages/formTemplate/index'})}>form表单实力</Button>
   </View>
 }
 export default Index
